@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation de Feux de Forêt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="humidity">Humidité:</label>
+                <select id="humidity">
+                    <option value="humid">Humide (10%)</option>
+                    <option value="normal">Normal (30%)</option>
+                    <option value="dry">Sec (60%)</option>
+                    <option value="very-dry">Très sec (90%)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="terrain">Type de terrain:</label>
+                <select id="terrain">
+                    <option value="continuous">Continu (100%)</option>
+                    <option value="sparse">Peu espacé (95%)</option>
+                    <option value="spaced">Espacé (80%)</option>
+                    <option value="scattered">Clairsemé (50%)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="iterations">Nombre d'itérations:</label>
+                <input type="number" id="iterations" min="1" value="100">
+            </div>
+            
+            <button id="startSimulation">Démarrer la simulation</button>
+            <button id="pauseSimulation">Pause</button>
+        </div>
+        
+        <canvas id="forestGrid"></canvas>
+        
+        <div id="statistics" class="statistics">
+            <h3>Statistiques</h3>
+            <div id="stats-content"></div>
+        </div>
+    </div>
+    <script src="simulation.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
